@@ -1,1 +1,5 @@
 .DS_Store
+backup
+scale_gds/backup
+scale_gds/input_gds
+scale_gds/output_gds
