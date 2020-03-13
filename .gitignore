@@ -3,3 +3,8 @@ backup
 scale_gds/backup
 scale_gds/input_gds
 scale_gds/output_gds
+png/*
+
+png2gds/gds/
+png2gds/gray/
+png2gds/png/

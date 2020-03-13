@@ -1,7 +1,7 @@
 '''
 @Author: Guojin Chen
 @Date: 2019-11-11 21:41:03
-@LastEditTime: 2019-11-14 21:46:51
+@LastEditTime: 2020-03-06 18:16:37
 @Contact: cgjhaha@qq.com
 @Description: input one gds, output one 2048*2048 rgb image
 '''
@@ -14,10 +14,15 @@ from PIL import Image, ImageDraw
 from progress.bar import Bar
 clipsize = 2048
 
-DESIGN_LAYER = 0
-OPC_LAYER = 1
-SRAF_LAYER = 2
-CONTOUR_LAYER = 200
+# DESIGN_LAYER = 0
+# OPC_LAYER = 1
+# SRAF_LAYER = 2
+# CONTOUR_LAYER = 200
+
+DESIGN_LAYER = 2
+OPC_LAYER = 4
+SRAF_LAYER = 20
+# CONTOUR_LAYER = 200
 
 
 def gds2img(Infolder, Infile, ImgOut):
@@ -35,6 +40,7 @@ def gds2img(Infolder, Infile, ImgOut):
 
 
     sellayer = [DESIGN_LAYER, OPC_LAYER, SRAF_LAYER] #Layer Number
+    # sellayer = [DESIGN_LAYER, SRAF_LAYER] #Layer Number
     dtype = 0  #Layout Data Type
     polygon  = []
     im = Image.new("RGB", (clipsize, clipsize))
@@ -78,8 +84,11 @@ def gds2img(Infolder, Infile, ImgOut):
 # Infolder = os.path.join(os.path.abspath(os.path.dirname(__file__)),'test_sample')
 # Infolder = '/Users/dekura/Desktop/opc/design-april'
 # Outfolder = os.path.join(os.path.abspath(os.path.dirname(__file__)),'test_sample_output/mask_sraf')
-Infolder = '/Users/dekura/Desktop/opc/datasets/myresults/gds/'
-Outfolder = '/Users/dekura/Desktop/opc/datasets/myresults/maskg_designr_srafb_png_2048'
+# Infolder = '/Users/dekura/Desktop/opc/datasets/myresults/gds/'
+# Outfolder = '/Users/dekura/Desktop/opc/datasets/myresults/maskg_designr_srafb_png_2048'
+Infolder = '/Users/dekura/Desktop/dmo/denseclip/'
+Outfolder = '/Users/dekura/Desktop/dmo/denseclip_png/mask'
+
 
 if not os.path.isdir(Outfolder):
     os.mkdir(Outfolder)
