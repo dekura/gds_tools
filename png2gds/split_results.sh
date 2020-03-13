@@ -1,11 +1,12 @@
 ### 
 # @Author: Guojin Chen
  # @Date: 2019-11-19 20:45:42
- # @LastEditTime: 2020-03-13 12:32:18
+ # @LastEditTime: 2020-03-13 15:09:43
  # @Contact: cgjhaha@qq.com
  # @Description: 
  ###
-python=/usr/local/miniconda3/envs/pytorch/bin/python
+# python=/usr/local/miniconda3/envs/pytorch/bin/python
+python=/home/glchen/miniconda3/envs/py3/bin/python
 # $python split_results.py --name ganopc_upp_base_25epoch --in_folder /Users/dekura/Downloads/aresults/ganopc_upp_base_50epoch/test_25/images/
 
 # $python split_results.py --split_num 10 --name dcupp_naive6_weighted_100epoch_dr2mg_2048_2048_uppscale4 --in_folder /Users/dekura/Downloads/aresults/dcupp_naive6_weighted_100epoch_dr2mg_2048_2048_uppscale4/test_latest/images/
