@@ -1,7 +1,7 @@
 '''
 @Author: Guojin Chen
 @Date: 2019-11-14 12:29:14
-@LastEditTime: 2020-03-17 14:11:35
+@LastEditTime: 2020-03-17 14:19:18
 @Contact: cgjhaha@qq.com
 @Description: this file split the trained results to 2 png folder
     in order to get the gds file.
@@ -42,6 +42,11 @@ if name == '':
 def mkdir_ifnotexists(path):
     if not os.path.exists(path):
         os.mkdir(path)
+def raiseErr_ifnotexists(*paths):
+    for path in paths:
+        if not os.path.exists(path):
+            print('Not found path :{}'.format(path))
+            raise FileExistsError
 
 def get_convert_list():
     base_folder = args.in_folder
@@ -76,8 +81,7 @@ def split_results(test_convert_ids, args):
         img_real_A = 'via{}{}'.format(id, real_A_postname)
         img_opc_A_path = os.path.join(in_folder, img_opc_A)
         img_real_A_path = os.path.join(in_real_folder, img_real_A)
-        if not os.path.isfile(img_opc_A_path) or not os.path.isfile(img_real_A_path):
-            raise FileNotFoundError
+        raiseErr_ifnotexists(img_opc_A_path, img_real_A_path)
         split_id = id%args.split_num
         out_split_path = os.path.join(out_opc_A_path, str(split_id))
         mkdir_ifnotexists(out_split_path)
