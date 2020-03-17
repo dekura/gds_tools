@@ -1,5 +1,9 @@
 """
 this file change
+
+
+直接改put的值可不可以。
+如果效果不好就试试换一种dms的转换。
 """
 import re
 import os
@@ -13,8 +17,8 @@ parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFo
 parser.add_argument('--name', default='', type=str, help='experiment name')
 parser.add_argument('--in_folder', default='./png', type=str, help='the splited input image folder')
 parser.add_argument('--out_folder', default='./gds', type=str, help='the out gds folder')
-parser.add_argument('--img_size', default=1024, type=int, help='the image size of your input, design + sraf')
-parser.add_argument('--window_size', default=1024, type=int, help='the window image size of your mask')
+parser.add_argument('--img_size', default=2048, type=int, help='the image size of your input, only sraf, a simple strategy')
+parser.add_argument('--window_size', default=1024, type=int, help='the window image size of your design + mask')
 parser.add_argument('--split_id', default=0, type=int, help='folder split 0|1|2|3|4|5|6|...')
 parser.add_argument('--threshold', default=0.6, type=float, help='threshold to filter the noisy point')
 parser.add_argument('--fake_B_postname', default='_mbsraf.gds_lccout_CALI_fake_B.png', type=str,
@@ -132,9 +136,8 @@ for entry in tqdm(opc_A_list):
     mask_img.save(mask_path)
     # real_mask_img.save(real_mask_path)
     # gt_mask_img.save(gt_mask_path)
-
     nd.image(design_path, size=GT_IMAGE_SIZE, pixelsize=GT_MULTI_SIZE, invert=True, layer=DESIGN_LAYER, threshold=THRESHOLD, cellname='design').put(0)
-    nd.image(mask_path, size=IMAGE_SIZE, pixelsize=MULTI_SIZE, invert=True, layer=OPC_LAYER, threshold=THRESHOLD, cellname='mask').put(0)
+    nd.image(mask_path, size=IMAGE_SIZE, pixelsize=MULTI_SIZE, invert=True, layer=OPC_LAYER, threshold=THRESHOLD, cellname='mask').put((GT_IMAGE_SIZE - IMAGE_SIZE)*MULTI_SIZE//2)
     nd.image(sraf_path, size=GT_IMAGE_SIZE, pixelsize=GT_MULTI_SIZE, invert=True, layer=SRAF_LAYER, threshold=THRESHOLD, cellname='sraf').put(0)
     # nd.image(real_mask_path, size=IMAGE_SIZE, pixelsize=MULTI_SIZE, invert=True, layer=50, threshold=THRESHOLD, cellname='real_mask').put(0)
     # nd.image(gt_mask_path, size=GT_IMAGE_SIZE, pixelsize=GT_MULTI_SIZE, invert=True, layer=75, threshold=THRESHOLD, cellname='gt_mask').put(0)
