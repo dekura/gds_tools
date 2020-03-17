@@ -1,7 +1,7 @@
 '''
 @Author: Guojin Chen
 @Date: 2019-11-14 12:29:14
-@LastEditTime: 2020-03-16 16:13:04
+@LastEditTime: 2020-03-17 14:11:35
 @Contact: cgjhaha@qq.com
 @Description: this file split the trained results to 2 png folder
     in order to get the gds file.
@@ -58,12 +58,12 @@ def get_convert_list():
 def split_results(test_convert_ids, args):
     if not os.path.exists(args.in_folder) or not os.path.exists(args.in_real_folder):
         print('in_floder: {}'.format(args.in_folder))
-        print('in_real__folder: {}'.format(args.in_real_folder))
+        print('in_real_folder: {}'.format(args.in_real_folder))
         raise NotADirectoryError
     # in_list = os.listdir(in_folder)
     in_folder = args.in_folder
     out_folder = args.out_folder
-    in_real_folder = args.in_real__folder
+    in_real_folder = args.in_real_folder
     fake_B_postname = args.fake_B_postname
     real_A_postname = args.real_A_postname
     out_opc_A_path = os.path.join(out_folder, 'opc_A')
