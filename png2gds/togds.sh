@@ -1,7 +1,7 @@
 ### 
 # @Author: Guojin Chen
  # @Date: 2019-11-19 12:51:07
- # @LastEditTime: 2020-03-18 10:34:21
+ # @LastEditTime: 2020-03-18 10:41:01
  # @Contact: cgjhaha@qq.com
  # @Description:
  ###
@@ -18,7 +18,7 @@ fi
 python=/home/glchen/miniconda3/envs/py3/bin/python
 # python=/usr/local/miniconda3/envs/pytorch/bin/python
 $python paired2gds_nobbox.py \
---name ovia1_e70_dr2mg \
+--name ovia2_e70_dr2mg \
 --in_folder /home/glchen/datasets/dmo_results_splited \
 --out_folder /home/glchen/datasets/dmo_results2gds \
 --img_size 2048 \
