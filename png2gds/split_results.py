@@ -1,7 +1,7 @@
 '''
 @Author: Guojin Chen
 @Date: 2019-11-14 12:29:14
-@LastEditTime: 2020-03-17 14:23:10
+@LastEditTime: 2020-03-22 13:06:30
 @Contact: cgjhaha@qq.com
 @Description: this file split the trained results to 2 png folder
     in order to get the gds file.
@@ -50,7 +50,7 @@ def raiseErr_ifnotexists(*paths):
 
 def get_convert_list():
     base_folder = args.in_folder
-    restr = '*_fake_B.png'
+    restr = '*{}'.format(args.fake_B_postname)
     base_folder_list = glob.glob(os.path.join(base_folder, restr))
     should_convert_list = []
     for file in base_folder_list:
