@@ -1,7 +1,7 @@
 ### 
 # @Author: Guojin Chen
  # @Date: 2019-11-19 12:51:07
- # @LastEditTime: 2020-03-22 12:59:46
+ # @LastEditTime: 2020-03-24 13:29:46
  # @Contact: cgjhaha@qq.com
  # @Description:
  ###
@@ -15,10 +15,12 @@ else
     echo "the word you input is $1"
 fi
 
+name=ovia3pixhd_e100_1024_dr2mg
+
 python=/home/glchen/miniconda3/envs/py3/bin/python
 # python=/usr/local/miniconda3/envs/pytorch/bin/python
 $python paired2gds_nobbox.py \
---name ovia2pixhd_e100_dr2mg \
+--name $name \
 --in_folder /home/glchen/datasets/dmo_results_splited \
 --out_folder /home/glchen/datasets/dmo_results2gds \
 --img_size 2048 \
