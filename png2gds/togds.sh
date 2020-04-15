@@ -15,7 +15,9 @@ else
     echo "the word you input is $1"
 fi
 
-name=ovia3pixhd_e100_1024_dr2mg
+name=ovia6pixhd_e100_1024_good_dr2mg_D2d1
+
+
 
 python=/home/glchen/miniconda3/envs/py3/bin/python
 # python=/usr/local/miniconda3/envs/pytorch/bin/python
@@ -28,13 +30,3 @@ $python paired2gds_nobbox.py \
 --split_id $sid \
 --fake_B_postname _mbsraf.gds_lccout_CALI_synthesized_image.png \
 --real_A_postname _mbsraf.gds_lccout_CALI.png
-
-# $python paired2gds_nobbox.py \
-# --name via04dmo1024 \
-# --in_folder /Users/dekura/Downloads/testnewpng2gds/ \
-# --out_folder /Users/dekura/Downloads/testnewpng2gdsout/ \
-# --img_size 2048 \
-# --threshold 0.6 \
-# --split_id $sid \
-# --fake_B_postname _mbsraf_mb_mb_lccout.oas_fake_B.png \
-# --real_A_postname _mbsraf_mb_mb_lccout.oas.png
