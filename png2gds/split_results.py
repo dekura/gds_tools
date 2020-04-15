@@ -1,7 +1,7 @@
 '''
 @Author: Guojin Chen
 @Date: 2019-11-14 12:29:14
-@LastEditTime: 2020-03-22 13:06:30
+@LastEditTime: 2020-04-15 14:59:20
 @Contact: cgjhaha@qq.com
 @Description: this file split the trained results to 2 png folder
     in order to get the gds file.
@@ -24,6 +24,7 @@ parser.add_argument('--in_folder', default='', type=str, help='in folder, we tak
 parser.add_argument('--in_real_folder', default='', type=str, help='the folder store the 2048*2048 dms, we take ds')
 parser.add_argument('--out_folder', default='./gds', type=str, help='out gds folder')
 parser.add_argument('--split_num', default=7, type=int, help='how many folder do you want to split')
+parser.add_argument('--is_fc', default=False, action='store_true', help='split for full chips')
 parser.add_argument('--fake_B_postname', default='_mbsraf.gds_lccout_CALI_fake_B.png', type=str,
     help='if fake b via1_mbsraf.gds_lccout_CALI_fake_B.png, so the post name'
 )
@@ -81,14 +82,19 @@ def split_results(test_convert_ids, args):
     for id in tqdm(test_convert_ids):
         img_opc_A = 'via{}{}'.format(id, fake_B_postname)
         img_real_A = 'via{}{}'.format(id, real_A_postname)
+        if args.is_fc:
+            img_opc_A = 'fr_{}{}'.format(id, fake_B_postname)
+            img_out_opc_A = 'via{}{}'.format(id, fake_B_postname)
+            img_real_A = 'fr_{}{}'.format(id, real_A_postname)
+            img_out_real_A = 'via{}{}'.format(id, real_A_postname)
         img_opc_A_path = os.path.join(in_folder, img_opc_A)
         img_real_A_path = os.path.join(in_real_folder, img_real_A)
         raiseErr_ifnotexists(img_opc_A_path, img_real_A_path)
         split_id = id%args.split_num
         out_split_path = os.path.join(out_opc_A_path, str(split_id))
         mkdir_ifnotexists(out_split_path)
-        shutil.copyfile(img_opc_A_path, os.path.join(out_split_path, img_opc_A))
-        shutil.copyfile(img_real_A_path, os.path.join(out_real_A_path, img_real_A))
+        shutil.copyfile(img_opc_A_path, os.path.join(out_split_path, img_out_opc_A))
+        shutil.copyfile(img_real_A_path, os.path.join(out_real_A_path, img_out_real_A))
 
 
 

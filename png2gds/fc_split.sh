@@ -1,7 +1,7 @@
 ###
 # @Author: Guojin Chen
  # @Date: 2019-11-19 20:45:42
- # @LastEditTime: 2020-03-24 13:27:00
+ # @LastEditTime: 2020-04-15 14:47:12
  # @Contact: cgjhaha@qq.com
  # @Description:
 ###
@@ -18,4 +18,5 @@ $python split_results.py \
 --out_folder /home/glchen/datasets/dmo_results_splited \
 --split_num 16 \
 --fake_B_postname _fake_B.png \
---real_A_postname .png
+--real_A_postname .png \
+--is_fc
