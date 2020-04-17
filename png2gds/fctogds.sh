@@ -15,7 +15,7 @@ else
     echo "the word you input is $1"
 fi
 
-name=ovia1_e70_dr2mg_fc
+name=ovia6pixhd_e100_1024_good_dr2mg_fc
 python=/home/glchen/miniconda3/envs/py3/bin/python
 
 # python=/usr/local/miniconda3/envs/pytorch/bin/python
@@ -26,5 +26,5 @@ $python paired2gds_nobbox.py \
 --img_size 2048 \
 --threshold 0.9 \
 --split_id $sid \
---fake_B_postname _mbsraf.gds_lccout_CALI_synthesized_image.png \
---real_A_postname _mbsraf.gds_lccout_CALI.png
+--fake_B_postname _synthesized_image.png \
+--real_A_postname .png
