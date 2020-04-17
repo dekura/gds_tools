@@ -1,7 +1,7 @@
 '''
 @Author: Guojin Chen
 @Date: 2019-11-14 12:29:14
-@LastEditTime: 2020-04-15 14:59:20
+@LastEditTime: 2020-04-17 10:24:21
 @Contact: cgjhaha@qq.com
 @Description: this file split the trained results to 2 png folder
     in order to get the gds file.
@@ -81,7 +81,9 @@ def split_results(test_convert_ids, args):
 
     for id in tqdm(test_convert_ids):
         img_opc_A = 'via{}{}'.format(id, fake_B_postname)
+        img_out_opc_A = img_opc_A
         img_real_A = 'via{}{}'.format(id, real_A_postname)
+        img_out_real_A = img_real_A
         if args.is_fc:
             img_opc_A = 'fr_{}{}'.format(id, fake_B_postname)
             img_out_opc_A = 'via{}{}'.format(id, fake_B_postname)
