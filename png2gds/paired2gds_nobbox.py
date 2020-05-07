@@ -49,10 +49,10 @@ GAN_LAYER = 25
 # gds size = img size * multi_size
 # GT_IMAGE_SIZE = 2048
 GT_IMAGE_SIZE = args.img_size
-GT_MULTI_SIZE = 0.001
+GT_MULTI_SIZE = 0.001*(2048//GT_IMAGE_SIZE)
 
 IMAGE_SIZE = args.window_size
-MULTI_SIZE = 0.001
+MULTI_SIZE = 0.001*(2048//IMAGE_SIZE)
 THRESHOLD = args.threshold
 
 root_path = os.path.join(args.in_folder, args.name)
