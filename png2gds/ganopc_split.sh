@@ -1,7 +1,7 @@
 ###
  # @Author: Guojin Chen
  # @Date: 2020-05-07 14:11:22
- # @LastEditTime: 2020-05-07 14:14:32
+ # @LastEditTime: 2020-05-07 14:15:58
  # @Contact: cgjhaha@qq.com
  # @Description: split for ganopc
 ###
@@ -9,7 +9,7 @@
 
 # you only need to change this
 # -------
-testname=
+testname=ganopc_upp_base_50epoch_rect1_50
 # -------
 python=/home/glchen/miniconda3/envs/py3/bin/python
 $python split_results.py \
