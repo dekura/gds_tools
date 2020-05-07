@@ -8,7 +8,7 @@
 
 # you only need to change this
 # -------
-testname=ovia1pixhd_e100_1024_dr2mg_D2d1
+testname=orect5pixhd_e100_1024_good_dr2mg_D2d1
 # -------
 python=/home/glchen/miniconda3/envs/py3/bin/python
 $python split_results.py \

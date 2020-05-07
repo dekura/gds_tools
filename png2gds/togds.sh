@@ -15,7 +15,7 @@ else
     echo "the word you input is $1"
 fi
 
-name=ovia1_e70_dr2mg_fc
+name=orect5pixhd_e100_1024_good_dr2mg_D2d1
 python=/home/glchen/miniconda3/envs/py3/bin/python
 
 # python=/usr/local/miniconda3/envs/pytorch/bin/python

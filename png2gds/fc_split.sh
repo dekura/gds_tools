@@ -17,7 +17,7 @@ $python split_results.py \
 --in_folder /home/glchen/datasets/dmo_results/$testname/test_latest/images \
 --in_real_folder /home/glchen/datasets/dmo_results/$testname/testbg \
 --out_folder /home/glchen/datasets/dmo_results_splited \
---split_num 2 \
+--split_num 16 \
 --fake_B_postname _synthesized_image.png \
 --real_A_postname .png \
 --is_fc
