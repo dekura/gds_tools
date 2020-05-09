@@ -16,7 +16,7 @@ else
     echo "the word you input is $1"
 fi
 
-name=ganopc_upp_base_50epoch_rect1_50
+name=ganopc_upp_base_50epoch_via1_50
 python=/home/glchen/miniconda3/envs/py3/bin/python
 
 # python=/usr/local/miniconda3/envs/pytorch/bin/python
