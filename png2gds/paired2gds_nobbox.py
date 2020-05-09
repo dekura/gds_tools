@@ -18,7 +18,9 @@ parser.add_argument('--name', default='', type=str, help='experiment name')
 parser.add_argument('--in_folder', default='./png', type=str, help='the splited input image folder')
 parser.add_argument('--out_folder', default='./gds', type=str, help='the out gds folder')
 parser.add_argument('--img_size', default=2048, type=int, help='the image size of your input, only sraf, a simple strategy')
+parser.add_argument('--gt_mt_size', default=0.001, type=int, help='2048 * 0.001 = 2um')
 parser.add_argument('--window_size', default=1024, type=int, help='the window image size of your design + mask')
+parser.add_argument('--win_mt_size', default=0.001, type=int, help='1024 * 0.001 = 1um')
 parser.add_argument('--split_id', default=0, type=int, help='folder split 0|1|2|3|4|5|6|...')
 parser.add_argument('--threshold', default=0.6, type=float, help='threshold to filter the noisy point')
 parser.add_argument('--fake_B_postname', default='_mbsraf.gds_lccout_CALI_fake_B.png', type=str,
@@ -49,10 +51,10 @@ GAN_LAYER = 25
 # gds size = img size * multi_size
 # GT_IMAGE_SIZE = 2048
 GT_IMAGE_SIZE = args.img_size
-GT_MULTI_SIZE = 0.001*(2048//GT_IMAGE_SIZE)
+GT_MULTI_SIZE = args.gt_mt_size
 
 IMAGE_SIZE = args.window_size
-MULTI_SIZE = 0.001*(2048//IMAGE_SIZE)
+MULTI_SIZE = args.win_mt_size
 THRESHOLD = args.threshold
 
 root_path = os.path.join(args.in_folder, args.name)

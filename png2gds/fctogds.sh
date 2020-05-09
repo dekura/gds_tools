@@ -1,7 +1,7 @@
 ### 
 # @Author: Guojin Chen
  # @Date: 2019-11-19 12:51:07
- # @LastEditTime: 2020-03-24 13:29:46
+ # @LastEditTime: 2020-05-09 09:18:37
  # @Contact: cgjhaha@qq.com
  # @Description:
  ###
@@ -24,6 +24,7 @@ $python paired2gds_nobbox.py \
 --in_folder /home/glchen/datasets/dmo_results_splited \
 --out_folder /home/glchen/datasets/dmo_results2gds \
 --img_size 2048 \
+--window_size 1024 \
 --threshold 0.9 \
 --split_id $sid \
 --fake_B_postname _synthesized_image.png \
