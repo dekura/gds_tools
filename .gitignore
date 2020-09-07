@@ -7,4 +7,7 @@ png/*
 
 png2gds/gds/
 png2gds/gray/
-png2gds/png/
+png2gds/png/paths_b
+polyset_b
+asap7_removed.gds
+checkpath/paths_b
